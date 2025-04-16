@@ -2,7 +2,11 @@
 
 public class PCBDate : PCBGenericDataType
 {
-	public override bool IsValid()
+    public PCBDate(int fieldPos) : base(fieldPos)
+    {
+    }
+
+    public override bool IsValid()
 	{
 		bool ret = false;
 		if (value != null)

@@ -2,7 +2,11 @@
 
 public class PCBMemo : PCBGenericDataType
 {
-	public override bool IsValid()
+    public PCBMemo(int fieldPos) : base(fieldPos)
+    {
+    }
+
+    public override bool IsValid()
 	{
 		return true;
 	}

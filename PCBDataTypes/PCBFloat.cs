@@ -1,8 +1,12 @@
 ﻿using System;
 
-public class PCBNumber : PCBGenericDataType
+public class PCBFloat : PCBGenericDataType
 {
-	public override bool IsValid()
+    public PCBFloat(int fieldPos) : base(fieldPos)
+    {
+    }
+
+    public override bool IsValid()
 	{
 		bool ret = false;
 		if (value != null)

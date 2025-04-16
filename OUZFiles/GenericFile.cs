@@ -19,6 +19,7 @@ public class GenericFile : IGenericFile
 
     public GenericFile()
     {
+        fileName = "";
         lines = new List<string>();
     }
 

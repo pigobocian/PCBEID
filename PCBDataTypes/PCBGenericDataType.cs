@@ -14,21 +14,26 @@ public interface IPCBGenericDataType
 	
 	public abstract PCBDataType GetType();
 
+	public abstract void Clear();
+
 }
 
 public class PCBGenericDataType : IPCBGenericDataType
 {
 	protected string value;
+	protected int fieldPos;
 
-	public PCBGenericDataType()
+	public PCBGenericDataType(int fieldPos)
 	{
 		value = "";
-	}
+        this.fieldPos = fieldPos;
+    }
 
-	public PCBGenericDataType(string value)
+	public PCBGenericDataType(string value, int fieldPos)
 	{
 		this.value = value;
-	}
+		this.fieldPos = fieldPos;
+    }
 
 	public virtual bool IsValid()
 	{
@@ -45,15 +50,20 @@ public class PCBGenericDataType : IPCBGenericDataType
 		this.value = value;
 	}
 
-	public virtual string ToString()
+	public override string ToString()
 	{
 		return value;
 	}
 
-	public virtual IPCBGenericDataType.PCBDataType GetType()
+	public new virtual IPCBGenericDataType.PCBDataType GetType()
 	{
 		return IPCBGenericDataType.PCBDataType.dtNone;
 	}
+
+    public virtual void Clear()
+    {
+        value = "";
+    }
 
 }
 

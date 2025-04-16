@@ -2,8 +2,11 @@
 
 public class PCBBool : PCBGenericDataType
 {
+    public PCBBool(int fieldPos) : base(fieldPos)
+    {
+    }
 
-	public override bool IsValid()
+    public override bool IsValid()
 	{
 		return (value == "T") || (value == "N");
 	}
